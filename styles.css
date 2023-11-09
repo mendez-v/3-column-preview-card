@@ -1,0 +1,42 @@
+@font-face {
+  font-family: "Big";
+  src: url(./assets/fonts/BigShouldersDisplay-Bold.woff2) format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lexend";
+  src: url(./assets/fonts/LexendDeca-Regular.woff2) format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+body, h1, h2, p {
+  margin: 0;
+}
+.container {
+  /* 920 - 327 */
+  --Orange: hsl(31, 77%, 52%);
+  --cyan: hsl(184, 100%, 22%);
+  --dark-cyan: hsl(179, 100%, 13%);
+
+  inline-size: clamp(20.4375rem, 90.85vw, 57.5rem);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(327px,1fr));
+}
+.card--sedans {
+  background-color: var(--Orange);
+}
+.card--suvs {
+  background-color: var(--cyan);
+}
+.card--luxury {
+  background-color: var(--dark-cyan);
+}
