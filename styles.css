@@ -21,22 +21,139 @@ html {
 body, h1, h2, p {
   margin: 0;
 }
-.container {
-  /* 920 - 327 */
-  --Orange: hsl(31, 77%, 52%);
+body {
+  min-block-size: 100vh;
+  min-block-size: 100dvh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  place-items: center;
+  background-color: var(--neutral-95);
+}
+:root {
+  --orange: hsl(31, 77%, 52%);
   --cyan: hsl(184, 100%, 22%);
   --dark-cyan: hsl(179, 100%, 13%);
+  --neutral-95: hsl(0, 0%, 95%);
+  --neutral-100: hsl(0, 0%, 100%);
+  --radius-btn: 3em;
+  --radius-ctn: .5em;
+}
 
-  inline-size: clamp(20.4375rem, 90.85vw, 57.5rem);
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(327px,1fr));
+.container {
+  margin-block: 5.5rem;
+  inline-size: fit-content;
+  font-family: Lexend, 'Lucida Sans';
+  border-radius: var(--radius-ctn);
+  overflow: hidden;
+}
+.card {
+  padding: 3em;
+  max-inline-size: 20.4375rem;
 }
 .card--sedans {
-  background-color: var(--Orange);
+  background-color: var(--orange);
 }
 .card--suvs {
   background-color: var(--cyan);
 }
 .card--luxury {
   background-color: var(--dark-cyan);
+}
+
+.card__title {
+  margin-top: .77em;
+  font-size: 2.5rem;
+  font-family: Big, Impact;
+  text-transform: uppercase;
+  color: var(--neutral-95);
+}
+.card__description {
+  inline-size: 25ch;
+  margin-top: 1.75em;
+  font-size: .94rem;
+  line-height: 1.66;
+  color: var(--neutral-100);
+}
+.card__more {
+  margin-top: 1.6em;
+  padding: .82em 2em;
+  display: inline-block;
+  font-size: .94rem;
+  text-transform: capitalize;
+  text-decoration: none;
+  border-radius: var(--radius-btn);
+  background-color: var(--neutral-95);
+  border: .15em solid var(--neutral-95);
+  transition: color .2s ease-in-out, background-color .2s ease-in-out;
+}
+.card__more--sedans { 
+  color: var(--orange);
+}
+.card__more--suvs { 
+  color: var(--cyan);
+}
+.card__more--luxury { 
+  color: var(--dark-cyan);
+}
+
+.attribution {
+  margin-top: -3.25rem;
+  padding-block: 1em;
+  font-family: Lexend, 'Lucida Sans';
+  color: var(--dark-cyan);
+}
+.attribution__link {
+  margin-inline: .3em;
+  text-decoration: none;
+  color: var(--orange);
+
+  position:relative;
+}
+
+@media (width >= 62.5rem) {
+  .container {
+    display: flex;
+  }
+  .card {
+    max-inline-size: 19.18rem;
+  }
+  .card__more {
+    margin-top: 5.45em;
+  }
+}
+
+
+.attribution__link::after {
+  content: "";
+  inline-size: 0;
+  block-size: .12em;
+  background-color: currentColor;
+  position: absolute;
+  right: 0;
+  bottom: -.15em;
+  transition: inline-size .3s ease-in-out;
+}
+
+.card__more:focus-visible {
+  outline: .15em dotted var(--neutral-95);
+  outline-offset: .15em;
+}
+.attribution__link:focus-visible {
+  outline: .15em dotted currentColor;
+  outline-offset: .15em;
+}
+
+@media (hover:hover) {
+  .card__more:hover {
+    background-color: transparent;
+  }
+  .card__more--sedans:hover,
+  .card__more--suvs:hover,
+  .card__more--luxury:hover {
+    color: var(--neutral);
+  }
+  .attribution__link:hover::after {
+    inline-size: 100%;
+    left: 0;
+  }
 }
