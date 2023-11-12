@@ -150,7 +150,7 @@ body {
   .card__more--sedans:hover,
   .card__more--suvs:hover,
   .card__more--luxury:hover {
-    color: var(--neutral);
+    color: var(--neutral-100);
   }
   .attribution__link:hover::after {
     inline-size: 100%;
