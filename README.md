@@ -40,7 +40,7 @@ Users should be able to:
 
 [Demo](https://mendez-v.github.io/3-column-preview-card/) 👀
 
-<!-- [Frontend Mentor](https://your-solution-url.com) 👀 -->
+[Frontend Mentor](https://www.frontendmentor.io/solutions/3column-preview-card-component-using-grid-and-flex-TIr7mUZ6Iz) 👀
 
 ## Built with
 
